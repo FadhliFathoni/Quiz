@@ -52,7 +52,6 @@ def logoutView(request):
     logout(request)
     return redirect('/login/')
 
-@login_required(login_url='/login/')
 class CourseListView(ListView):
     model = Soal
     template_name = 'course.html'
@@ -74,7 +73,6 @@ class CourseListView(ListView):
 
         return render(request,self.template_name,context)
 
-@login_required(login_url='/login/')
 class SubmitView(View):
 
     def get(self,request, *args, **kwargs):
