@@ -7,9 +7,8 @@ from manager.models import Soal
 from .models import UserSubmit
 from django.contrib.auth.decorators import login_required
 from django.views.generic.base import TemplateView
-
-# @login_required(login_url='/login/')
-
+ 
+@login_required(login_url='/login/')
 def SoalListView(request):
     course = [
         {"course":"Java","img":"static/img/java.jpg"},
