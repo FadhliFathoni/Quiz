@@ -5,11 +5,9 @@ from django.views.generic.base import View
 from django.views.generic import ListView
 from django.contrib.auth.models import User
 from project.models import UserSubmit
-from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-@login_required(login_url='/login/')
 class detailJUser(ListView):
     ordering = '-updated'
     model = UserSubmit
@@ -35,7 +33,7 @@ class detailJUser(ListView):
             self.object_list.get(id = request.POST['decline']).delete()
         return redirect(f'/manager/{username}/')
         
-@login_required(login_url='/login/')
+
 def managerView(request):
     pengguna = User.objects.all()
     jawaban = UserSubmit.objects.all().order_by('-updated')
@@ -49,7 +47,6 @@ def managerView(request):
 def soal(request):
     return render(request,'manager/soal.html')
 
-@login_required(login_url='/login/')
 class SoalListView(ListView):
     model = Soal
     ordering = 'title'
@@ -59,7 +56,6 @@ class SoalListView(ListView):
             self.object_list = self.object_list.filter(title__contains = request.GET['search'])
         return render(request,'manager/soal.html',{"object_list":self.object_list})
 
-@login_required(login_url='/login/')
 class SoalView(View):
     model = None
     form = SoalForm()
@@ -110,7 +106,6 @@ class SoalView(View):
             return redirect('/manager/')
         return render(request,'manager/createSoal.html',self.context)
 
-@login_required(login_url='/login/')
 def deleteView(request, *args, **kwargs):
     Soal.objects.get(id = kwargs['id']).delete()
     return redirect('/manager/')
