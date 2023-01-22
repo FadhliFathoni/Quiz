@@ -1,23 +1,57 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <link rel="stylesheet" href="{% static 'static/css/manager.css' %}">
 </head>
+
 <body>
-    <table border="1">
-        <tr>
-            <th>User</th>
-        </tr>
-        {% for x in pengguna %} 
-        <tr>
-            <td>{{x}}</td>
-        </tr>
-        {% endfor%}
-    </table>
-    <a href="create">Create</a>
+    <nav>
+        <div class="nav">
+            <h3 class="apk">Quaf</h3>
+            <div class="navigasi">
+                <a href="/">Home</a>
+                <a href="create">Create</a>
+            </div>
+            <h3 class="user">{{user}}</h3>
+        </div>
+    </nav>
+    <div class="title">
+        <h2>User</h2>
+    </div>
+    <div class="container">
+        <table style="width: 1000px; text-align: left;">
+            <tr>
+                <th>User</th>
+                <th>Last Modified</th>
+                <th>Status</th>
+            </tr>
+            {% for x in pengguna %}
+            <tr>
+                <td> <a href="{{x.username}}">{{x.username}}</a></td>
+                <td>
+                    {% for y in jawaban %}
+                        {% if y.user == x.username%}
+                            <p>{{y.soal}}<p>
+                        {% endif%}
+                    {% endfor %}
+                </td>
+                <td>
+                    {% for y in jawaban %}
+                        {% if y.user == x.username%}
+                            <p>{{y.status}}<p>
+                        {% endif%}
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor%}
+        </table>
+    </div>
 </body>
+
 </html>

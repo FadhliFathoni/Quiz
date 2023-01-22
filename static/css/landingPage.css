@@ -36,11 +36,9 @@ nav {
     align-items: center;
     justify-content: space-between;
 }
-h1 a {
+h1 p {
     color: white;
-    text-decoration: none;
     font-size: 40px;
-    cursor: pointer;
 }
 
 nav li {
@@ -48,7 +46,7 @@ nav li {
     font: bold;
     list-style: none;
 }
-nav li a {
+nav li p {
     color: white;
 }
 

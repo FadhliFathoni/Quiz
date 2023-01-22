@@ -10,20 +10,30 @@ from django.views.generic.base import TemplateView
 
 # @login_required(login_url='/login/')
 
-class SoalListView(TemplateView):
-    template_name = 'landingPage.html'
+def SoalListView(request):
     course = [
-        {"course":"Java","img":"img/java.jpg"},
-        {"course":"PHP","img":"img/php.jpg"},
-        {"course":"Kotlin","img":"img/kotlin.jpg"},
-        {"course":"Android Studio","img":"img/android.jpg"},
-        {"course":"HTML","img":"img/html.jpg"},
+        {"course":"Java","img":"static/img/java.jpg"},
+        {"course":"PHP","img":"static/img/php.jpg"},
+        {"course":"Kotlin","img":"static/img/kotlin.jpg"},
+        {"course":"Android","img":"static/img/android.jpg"},
+        {"course":"HTML","img":"static/img/html.jpg"},
     ]
 
-    def get_context_data(self, **kwargs):
-            context = super().get_context_data(**kwargs)
-            context["object_list"] = self.course
-            return context
+    context = {
+        "object_list":course,
+    }
+    for soal in course:
+        jumlahSoal = Soal.objects.filter(course = soal['course'])
+
+        jawaban = UserSubmit.objects.filter(user = request.user)
+        penampung = 0
+        context[soal['course']] = 0
+        for x in jawaban:
+            if x.soal.course == soal['course']:
+                penampung = penampung + 1
+                rata = int(penampung / len(jumlahSoal) * 100)
+                context[soal['course']] = rata
+    return render(request, 'landingPage.html',context)
         
 
 def loginView(request):
@@ -49,19 +59,17 @@ class CourseListView(ListView):
 
     def get(self,request,*args, **kwargs):
         self.object_list = self.get_queryset().filter(course = kwargs['course'])
+        jawaban = UserSubmit.objects.filter(user = request.user)
         title = kwargs['course']
         context = {
             "object_list":self.object_list,
+            "jawaban":jawaban,
             "title":title,
         }
         if "category" in request.GET:
             category = request.GET['category']
             self.object_list = self.object_list.filter(category = category)
             context['object_list'] = self.object_list
-        # if "status" in request.GET:
-        #     status = request.GET['status']
-        #     self.object_list = self.object_list.filter(status = status)
-        #     context['object_list'] = self.object_list
         
 
         return render(request,self.template_name,context)
@@ -70,6 +78,7 @@ class SubmitView(View):
 
     def get(self,request, *args, **kwargs):
         soal = Soal.objects.get(id = kwargs['id'])
+        print(soal.contoh == None)
         context = {
             "soal":soal,
         }

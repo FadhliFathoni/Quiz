@@ -6,20 +6,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/course.css' %}">
+    <link rel="stylesheet" href="{% static 'static/css/course.css' %}">
     <title>Courses</title>
 </head>
 
 <body>
     <header>
         <h1><a href="/"> QUAF </a></h1>
-        <div class="searchbar" for="search">
-            <label for="search"><img src="{% static 'img/search.png' %}" alt="search..."></label>
-            <input type="text" name="search" value="" placeholder="Search...">
-        </div>
         <nav>
             <li>
+                {% if user == admin %}
+                <a href="/manager/">{{user}}</a>
+                {% else %}
                 <p><b> {{user}} </b></p>
+                {% endif %}
             </li>
         </nav>
     </header>
@@ -40,7 +40,14 @@
                         {% endif %}
                         <p class="desc">{{x.description}}</p>
                     </div>
-                    <a href="{{x.id}}" class="container-link" >Solve Now</a>
+                    <div class="button-solve">
+                        {% for y in jawaban %}
+                        {% if x.id == y.soal.id  and y.status == 'Solved'%}
+                        <img width="24px" height="24px" src="{% static 'static/img/checklist.png' %}" alt="">
+                        {% endif %}
+                        {% endfor %}
+                        <a href="{{x.id}}" class="container-link" >Solve Now</a>
+                    </div>
                 </div>
                 {% endfor %}
             </div>

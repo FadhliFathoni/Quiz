@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QUAF</title>
-    <link rel="stylesheet" href="{% static 'css/landingPage.css' %}">
+    <link rel="stylesheet" href="{% static 'static/css/landingPage.css' %}">
 </head>
 
 <body>
     <header>
-        <h1><a href="#"> QUAF </a></h1>
+        <h1><p> QUAF </p></h1>
         <nav>
-            <li><a href="#profile"><b> {{user}} </b></a></li>
+            <li><p><b> {{user}} </b></p></li>
         </nav>
     </header>
     <main>
@@ -32,14 +32,23 @@
                         <a href="{{x.course}}" class="namecourses">{{x.course}}</a>
                         <div class="horizontal">
                             <div class="garisprogres"></div>
-                            <div class="progres">100%</div>
+                            {% if x.course == 'Java'%}
+                            <div class="progres">{{Java}}%</div>
+                            {% elif x.course == 'PHP' %}
+                            <div class="progres">{{PHP}}%</div>
+                            {% elif x.course == 'Kotlin' %}
+                            <div class="progres">{{Kotlin}}%</div>
+                            {% elif x.course == 'Android' %}
+                            <div class="progres">{{Android}}%</div>
+                            {% elif x.course == 'HTML' %}
+                            <div class="progres">{{HTML}}%</div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
             </a>
         </div>
         {% endfor %}
-
     </main>
 
 </body>

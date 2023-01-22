@@ -15,11 +15,13 @@
         <h1><a href="/"> QUAF </a></h1>
         <div class="searchbar" for="search">
             <label for="search"><img src="{% static 'img/search.png' %}" alt="search..."></label>
-            <input type="text" name="search" value="" placeholder="Search...">
-        </div>
-        <nav>
-            <li><a href="#profile"><b> User </b></a></li>
-        </nav>
+            <form action="" method="get">
+                <input type="text" name="search" value="" placeholder="Search...">
+            </form>
+            </div>
+            <nav>
+                <li><a><b> {{user}} </b></a></li>
+            </nav>
     </header>
     <main>
         <p class="judulc">{{user}}</p>

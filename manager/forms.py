@@ -2,7 +2,13 @@ from django import forms
 from .models import Soal
 
 class SoalForm(forms.ModelForm):
-    code = forms.Textarea(attrs={'style':'white-space:pre;'})
     class Meta:
         model = Soal
-        fields = '__all__'
+        fields = ['title','description','code','category','course']
+
+class ContohForm(forms.ModelForm):
+    class Meta:
+        model = Soal
+        fields = ['contoh']
+
+        

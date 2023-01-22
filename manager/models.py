@@ -14,7 +14,7 @@ class Soal(models.Model):
         ("HTML","HTML"),
         ("Kotlin","Kotlin"),
         ("PHP","PHP"),
-        ("Android Studio","Android Studio"),
+        ("Android","Android"),
         )
 
     title = models.CharField(max_length=20)
@@ -22,6 +22,7 @@ class Soal(models.Model):
     code = models.TextField(null=True)
     category = models.CharField(max_length=20,choices=category)
     course = models.CharField(max_length=20,choices=data)
+    contoh = models.ImageField(upload_to='static/img/', null=True, blank=True)
 
     def __str__(self):
         return "{} {}".format(self.course, self.title)

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,14 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'static/css/create.css' %}">
 </head>
 <body>
-    <form action="" method="post">
-        {% csrf_token %}
-        <table>
-            {{form}}
-        </table>
-        <button type="submit">Submit</button>
-    </form>
+    <nav>
+        <div class="nav">
+            <h3 class="apk">Quaf</h3>
+            <div class="navigasi">
+                <a href="/">Home</a>
+                <a href="/manager/">Manager</a>
+            </div>
+            <h3 class="user">{{user}}</h3>
+        </div>
+    </nav>
+    <div class="title"><p>Create</p></div>
+    <div class="form">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                {{form}}
+                {{contoh}}
+                <tr>
+                    <td></td><td><button type="submit">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
 </body>
 </html>

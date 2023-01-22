@@ -91,6 +91,13 @@ main .judulc {
   padding: 0px 80px;
   margin-bottom: 8px;
 }
+
+.button-solve{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .verticalisicard {
   display: flex;
   flex-direction: column;
