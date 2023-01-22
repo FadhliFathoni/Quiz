@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/"> QUAF </a></h1>
+        <div class="searchbar" for="search">
+            <label for="search"><img src="{% static 'img/search.png' %}" alt="search..."></label>
+            <input type="text" name="search" value="" placeholder="Search...">
+        </div>
+        <nav>
+            <li><a href="#profile"><b> User </b></a></li>
+        </nav>
+    </header>
+    <main>
+        <p class="judulc">{{user}}</p>
+        <div class="content1">
+            {% for x in object_list%}
+            <div class="vertical">
+                <div class="card">
+                    <div class="verticalisicard">
+                        <p class="judul">{{x.soal.course}} {{x.soal.title}} ({{x.status}})</p>
+                        <p class="date">{{x.updated}}</p>
+                    </div>
+                    <form class="hrz" action="" method="POST" >
+                        {% csrf_token %}
+                        <button class="accept" name="accept" value="{{x.id}}">Accept</button>
+                        <button class="decline" name="decline" value="{{x.id}}">Decline</button>
+                    </form>
+                </div>
+                <div class="accordion">
+                    <div class="acc">
+                        <input type="checkbox" name="acc" id="acc1{{x.id}}">
+                        <label for="acc1{{x.id}}"><img src="{% static 'img/arrow.png' %}" style="margin: 5px 0px;" alt=""></label>
+                        <pre class="accbody">
+                            
+{{x.jawaban}}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>

@@ -18,7 +18,8 @@ class Soal(models.Model):
         )
 
     title = models.CharField(max_length=20)
-    description = models.TextField()
+    description = models.CharField(max_length=50, null=True)
+    code = models.TextField(null=True)
     category = models.CharField(max_length=20,choices=category)
     course = models.CharField(max_length=20,choices=data)
 

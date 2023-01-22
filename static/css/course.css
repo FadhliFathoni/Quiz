@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  background-color: #2c2f37;
+}
+main {
+  height: auto;
+  margin-bottom: 64px;
+  margin-right: 260px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  height: 100px;
+  width: auto;
+  background-color: #373940;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 150px;
+  position: sticky;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+h1 a {
+  color: white;
+  text-decoration: none;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+nav li {
+  font-size: 30px;
+  font: bold;
+  list-style: none;
+}
+nav li p {
+  color: white;
+}
+.searchbar img {
+  width: 20px;
+  height: auto;
+  margin: 15px 10px 15px 15px;
+}
+.searchbar input {
+  height: 30px;
+  width: 230px;
+  border: none;
+  font-size: 20px;
+  outline: none;
+}
+.searchbar {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  border-radius: 40px;
+  background-color: white;
+}
+
+main .judulc {
+  font-size: 48px;
+  margin: 40px 0px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+.content1 {
+  display: flex;
+  gap: 150px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  border-radius: 5px;
+  width: 800px;
+  height: 200px;
+  background-color: #373940;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 80px;
+  margin-bottom: 8px;
+}
+.verticalisicard {
+  display: flex;
+  flex-direction: column;
+}
+
+.verticalisicard .judul {
+  font-size: 36px;
+  color: white;
+}
+
+.verticalisicard .dific,
+.desc {
+  font-size: 24px;
+}
+
+.dific {
+  margin: 12px 0px 8px 0px;
+}
+.desc {
+  color: #5a5b61;
+}
+.container-link {
+  width: 200px;
+  height: 50px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.15s;
+  text-decoration: none;
+  background-color: #2c2f37;
+  color: #f5c445;
+}
+.container-link:hover {
+  color: #2c2f37;
+  background-color: #f5c445;
+}
+.btnjv {
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  border: none;
+  text-decoration: none;
+}
+.status li {
+  list-style: none;
+  margin: 10px 0px;
+  font-size: 24px;
+}
+.difficulty li {
+  list-style: none;
+  margin: 10px 0px;
+  font-size: 24px;
+}
+.difficulty {
+  font-size: 36px;
+  color: white;
+}
+.status {
+  font-size: 36px;
+  color: white;
+}
+.garis {
+  width: 160px;
+  height: 1px;
+  margin: 15px 0px;
+  background-color: black;
+}
+.vertikal2 {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  top: 0;
+  right: 0;
+  margin: 140px;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+input[type="radio"]:after {
+  width: 20px;
+  height: 20px;
+  border-radius: 15px;
+  position: relative;
+  right: 0;
+  top: -9px;
+  background-color: #d1d3d1;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+input[type="radio"]:checked:after {
+  width: 20px;
+  height: 20px;
+  border-radius: 15px;
+  right: 0;
+  top: -9px;
+  position: relative;
+  background-color: #f5c445;
+
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+td {
+  height: auto;
+  width: 30px;
+}
+td p {
+  font-size: 24px;
+}
+
+button{
+    background: #2c2f37;
+    width: 100px;
+    height: 43px;
+    border-radius: 16px;
+    border-color: #f5c445;
+    color: #f5c445;
+}
+button:hover{
+    width: 100px;
+    height: 43px;
+    border-radius: 16px;
+    background-color: #2c2f37;
+}

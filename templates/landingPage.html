@@ -1,26 +1,47 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>QUAF</title>
+    <link rel="stylesheet" href="{% static 'css/landingPage.css' %}">
 </head>
+
 <body>
-    <table>
-        <tr>
-            <td><a href="Java">Java</a></td>
-        </tr>
-        <tr>
-            <td><a href="Kotlin">Kotlin</a></td>
-        </tr>
-        <tr>
-            <td><a href="PHP">PHP</a></td>
-        </tr>
-        <tr>
-            <td><a href="Android Studio">Android Studio</a></td>
-        </tr>
-    </table>
-    <textarea name="" id="" style="width: 50%;height:500px;"></textarea>
+    <header>
+        <h1><a href="#"> QUAF </a></h1>
+        <nav>
+            <li><a href="#profile"><b> {{user}} </b></a></li>
+        </nav>
+    </header>
+    <main>
+        <div class="welcome">
+            <p>Welcome {{user}}...</p>
+        </div>
+        <div class="garis"></div>
+        <p class="judulc">Courses</p>
+        {% for x in object_list%}
+        <div class="container-card">
+            <a class="content" href="{{x.course}}">
+                <div class="card">
+                    <img src="{% static x.img %}" alt="">
+                    <div class="vertikal">
+                        <a href="{{x.course}}" class="namecourses">{{x.course}}</a>
+                        <div class="horizontal">
+                            <div class="garisprogres"></div>
+                            <div class="progres">100%</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+
+    </main>
+
 </body>
+
 </html>

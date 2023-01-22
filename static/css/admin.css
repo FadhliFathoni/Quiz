@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: #2C2F37;
+}
+main {
+    height: auto;
+    
+}
+
+header {
+    position: sticky;
+    top :0;
+    height: 100px;
+    width: auto;
+    background-color: #373940;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 150px;
+    position: sticky;
+}
+nav li a {
+    text-decoration: none;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+h1 a {
+    color: white;
+    text-decoration: none;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+nav li {
+    font-size: 30px;
+    font: bold;
+    list-style: none;
+}
+nav li a {
+    
+    color: white;
+    
+}
+.searchbar img {
+    width: 20px;
+    height: auto;
+    margin: 15px 10px 15px 15px ;
+}
+.searchbar input {
+    height: 30px;
+    width: 230px;
+    border: none;
+    font-size: 20px;
+    outline: none;
+}
+.searchbar {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+    background-color: white;
+}
+main .judulc  {
+    font-size: 48px;
+    margin: 80px 0px ;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+.content1 {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.card {
+    border-radius: 5px 5px 0px 0px;
+    width: 800px;
+    height: 200px;
+    background-color: #373940;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 80px;
+}
+
+
+.verticalisicard {
+    display: flex;
+    flex-direction: column;
+}
+
+.verticalisicard .judul {
+    font-size: 36px;
+    color: white;
+}
+
+.verticalisicard .date {
+    margin: 15px 0px;
+    font-size: 24px;
+} 
+
+
+.date {
+    color: #5A5B61;
+}
+
+.hrz {
+    display: flex;
+    gap: 20px;
+}
+.accept {
+    width: 130px;
+    height: 50px ;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #3CD354;
+    color: rgb(255, 255, 255);
+    border: none;
+}
+
+.decline {
+    width: 130px;
+    height: 50px ;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #D33C3C;
+    color: rgb(255, 255, 255);
+    border: none;
+}
+
+.accordion {
+    margin-bottom: 50px;
+    
+}
+.accordion input {
+    display: none;
+    
+}
+.accordion label {
+    background-color: #22252C;
+    width: 960px;
+    height: auto;
+    display: flex;
+    border-radius: 0px 0px 5px 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.accordion label:hover{
+    cursor: pointer;
+}
+
+
+.accordion .accbody {
+    display: none;
+    background-color: #22252c00;
+    width: 800px;
+    color: rgba(255, 255, 255, 0);
+    font-size: 24px;
+    height: auto;
+    padding: 80px;
+    
+    
+}
+.accordion input:checked~.accbody {
+    height: auto;
+    padding: 80px;
+    color: rgb(255, 255, 255);
+    transition: 0.5s step-end;
+    background-color: #22252C;
+    display: inline-block;
+}
+
+
+input:checked + label img {
+    transform: rotate(180deg);
+    transition: 0.5s;
+}
+
+.accept:hover, .decline:hover{
+    cursor: pointer;
+}
+
+.accept:hover{
+    transition: 0.2s;
+    background-color: #3cd355b2;
+}
+
+.decline:hover{
+    transition: 0.2s;
+    background-color: #d33c3ca2;
+}

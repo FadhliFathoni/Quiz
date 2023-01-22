@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: #2C2F37;
+    height: fit-content;
+}
+main {
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    position: sticky;
+    top :0;
+    height: 100px;
+    width: auto;
+    background-color: #373940;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 150px;
+    position: sticky;
+}
+nav li a {
+    text-decoration: none;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+h1 a {
+    color: white;
+    text-decoration: none;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+nav li {
+    font-size: 30px;
+    font: bold;
+    list-style: none;
+}
+nav li a {
+    color: white;
+}
+
+.welcome {
+    width: auto;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0px 200px;
+}
+.welcome p {
+    font-size: 48px;
+    color: white;
+}
+.garis {
+    width: 1200px;
+    height: 5px;
+    border-radius: 20px;
+    background-color: #373940;
+}
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.card img {
+    border-radius: 20px 0px 0px 20px;
+    width: 250px;
+    height: auto;
+}
+.card {
+    width: 900px;
+    height: 250px;
+    background-color: #373940;
+    display: flex;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+.vertikal {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    
+}
+.judulc {
+    color: white;
+    font-size: 48px;
+    width: 1200px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+.garisprogres {
+    width: 300px;
+    height: 5px;
+    background-color: #2C2F37;
+    border-radius: 10px;
+}
+.namecourses {
+    font-size: 48px;
+    color: white;
+    text-decoration: none;
+}
+.progres {
+    color: #3CD354;
+}
+.horizontal {
+    display: flex;
+    align-items: center;
+    gap:15px;
+}
+
+.container-card {
+    margin-bottom: 50px;
+}

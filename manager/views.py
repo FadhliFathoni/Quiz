@@ -3,14 +3,46 @@ from .models import Soal
 from .forms import SoalForm
 from django.views.generic.base import View
 from django.views.generic import ListView
+from django.contrib.auth.models import User
+from project.models import UserSubmit
 
 # Create your views here.
+
+class detailJUser(ListView):
+    ordering = 'updated'
+    model = UserSubmit
+    template_name = 'manager/jawaban.html'
+    object_list = model.objects.all()
+
+    def get(self,request,*args, **kwargs):
+        self.object_list = self.get_queryset().filter(user = kwargs['username'])
+        return render(request, self.template_name,{"object_list":self.object_list})
+
+    def post(self, request,*args, **kwargs):
+        if "accept" in request.POST:
+            print(request.POST['accept'])
+            self.object_list.filter(id = request.POST['accept']).update(
+                status = "Solved"
+            )
+        if "decline" in request.POST:
+            print(request.POST['decline'])
+            self.object_list.get(id = request.POST['decline']).delete()
+        return redirect('/manager/admin/')
+        
+
+def managerView(request):
+    pengguna = User.objects.all()
+    context = {
+        "pengguna":pengguna,
+    }
+    return render(request,'manager/manager.html',context)
 
 def soal(request):
     return render(request,'manager/soal.html')
 
 class SoalListView(ListView):
     model = Soal
+    ordering = 'title'
     def get(self,request,*args, **kwargs):
         self.object_list = self.get_queryset()
         if "search" in request.GET:
@@ -47,3 +79,7 @@ class SoalView(View):
             form.save()
             return redirect('/manager/')
         return render(request,'manager/createSoal.html',self.context)
+
+def deleteView(request, *args, **kwargs):
+    Soal.objects.get(id = kwargs['id']).delete()
+    return redirect('/manager/')

@@ -1,9 +1,3 @@
-FITUR
-1. Manager buat soal
-2. User melihat semua soal
-3. User mengirim jawaban berupa text atau file
-4. Manager dapat menilai jawaban user
-
-TASK
-1. Submit text
-2. login
+PR
+1. Submit = pending
+2. Accept = solved

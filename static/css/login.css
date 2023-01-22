@@ -1,0 +1,98 @@
+html,body {
+  height: 100%;
+  gap: 12px;
+}
+
+body {
+  background-color: #2c2f37;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.login {
+  grid-column: 2;
+  grid-row: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: white;
+}
+
+.wrapper {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-card {
+  background-color: #1a191c;
+  border-radius: 16px;
+  width: 329px;
+  height: 179px;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.username {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#username {
+  border-radius: 16px;
+}
+
+.password {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#password {
+  border-radius: 16px;
+}
+
+.button {
+  display: flex;
+  justify-content: right;
+  margin-top: 8px;
+}
+
+input {
+  background-color: #2c2f37;
+  width: 90%;
+  height: 40px;
+  padding: 16px;
+  border: none;
+  color: #71778a;
+}
+
+button {
+  background-color: #f5c445;
+  width: 100px;
+  height: 50px;
+  border-radius: 12px;
+  margin-right: 20px;
+  border: none;
+  transition: 0.15s;
+}
+button:hover {
+  background-color: #2c2f37;
+  color: #f5c445;
+}
