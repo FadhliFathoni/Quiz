@@ -77,7 +77,6 @@ class SubmitView(View):
 
     def get(self,request, *args, **kwargs):
         soal = Soal.objects.get(id = kwargs['id'])
-        print(soal.contoh == None)
         context = {
             "soal":soal,
         }

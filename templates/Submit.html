@@ -144,7 +144,9 @@
         {{soal.description}}
     </p>
     {% if soal.contoh != None %}
-    <img src="{% static soal.contoh %}">
+    <div class="img" style="display: flex;justify-content: center;align-items: center;">
+        <img src="{% static soal.contoh %}" style="width: 25%;height: auto;">
+    </div>
     {% else %}
     <div class="container-code">
         <div class="bg-code">

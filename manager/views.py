@@ -24,12 +24,10 @@ class detailJUser(ListView):
     def post(self, request,*args, **kwargs):
         username = kwargs['username']
         if "accept" in request.POST:
-            print(request.POST['accept'])
             self.object_list.filter(id = request.POST['accept']).update(
                 status = "Solved"
             )
         if "decline" in request.POST:
-            print(request.POST['decline'])
             self.object_list.get(id = request.POST['decline']).delete()
         return redirect(f'/manager/{username}/')
         
